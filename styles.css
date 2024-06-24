@@ -1,7 +1,8 @@
+/* General body styles */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 8;
-    padding: 5;
+    margin: 0;
+    padding: 0;
     background: url('hos.jpg') no-repeat center center fixed;
     background-size: cover;
     display: flex;
@@ -11,6 +12,7 @@ body {
     color: #333;
 }
 
+/* Dashboard styles */
 .dashboard-container {
     background-color: rgba(255, 255, 255, 0.9);
     padding: 20px;
@@ -104,8 +106,6 @@ button {
     border-radius: 5px;
     cursor: pointer;
     width: 100%;
-    
-
 }
 
 button:hover {
@@ -115,10 +115,11 @@ button:hover {
 .confirmation-container {
     text-align: left;
 }
+
 .highlight {
     font-weight: bold;
-   
 }
+
 .confirmation-container h2 {
     text-align: center;
     color: #21ed16;
@@ -131,51 +132,6 @@ button:hover {
 .confirmation-container button {
     display: block;
     margin: 20px auto;
-}
-.dashboard-container {
-    background-color: rgba(255, 255, 255, 0.9);
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 350%; /* Adjust the width as desired */
-    max-width: 500px; 
-    text-align: center;
-    margin: 0 auto;
-}
-.center-box {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 80vh; /* Make the center box full height of the viewport */
-}
-
-.dashboard-container {
-    background-color: rgba(255, 255, 255, 0.9);
-    padding: 50px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 2000%; /* Adjust the width as desired */
-    max-width: 50000px; 
-    max-height: 80vh; /* Limit the height of the dashboard container */
-    overflow-y: auto; /* Add vertical scrollbar if content overflows */
-    text-align: center;
-}
-
-
-
-/* Login Page and Signup Page  */
-
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0;
-    padding: 0;
-    background: url('hos.jpg') no-repeat center center fixed;
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    color: #333;
 }
 
 .center-box {
@@ -274,16 +230,17 @@ button:hover {
     padding-right: 40px; /* Make space for toggle button */
 }
 
-.toggle-password
- {
+.toggle-password {
     position: absolute;
     right: 8px;
     top: 7px;
     cursor: pointer;
 }
+
 .password-container input[type="password"] {
     width: calc(100% - 40px); 
 }
+
 .menu-toggle {
     cursor: pointer;
     display: flex;
