@@ -1,170 +1,4 @@
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 8;
-    padding: 5;
-    background: url('hos.jpg') no-repeat center center fixed;
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    color: #333;
-}
-
-.dashboard-container {
-    background-color: rgba(255, 255, 255, 0.9);
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 90%;
-    max-width: 1000px;
-    text-align: center;
-    margin: 0 auto;
-}
-
-.header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-.header h2 {
-    color: #96129d;
-    text-align: center;
-    width: 100%;
-}
-
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
-
-.dropbtn {
-    background-color: #7fb66efe;
-    color: white;
-    padding: 10px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-}
-
-.dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-}
-
-.dropdown-content a:hover {
-    background-color: #e5ebeb;
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-.dropdown:hover .dropbtn {
-    background-color: #171617;
-}
-
-.hospital-booking-container {
-    text-align: left;
-}
-
-label {
-    display: block;
-    margin: 10px 0;
-    color: #007BFF;
-}
-
-input, select {
-    width: 100%;
-    padding: 10px;
-    margin: 5px 0 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-button {
-    background-color: #007BFF;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    width: 100%;
-    
-
-}
-
-button:hover {
-    background-color: #070707;
-}
-
-.confirmation-container {
-    text-align: left;
-}
-.highlight {
-    font-weight: bold;
-   
-}
-.confirmation-container h2 {
-    text-align: center;
-    color: #21ed16;
-}
-
-.confirmation-container p {
-    margin: 10px 0;
-}
-
-.confirmation-container button {
-    display: block;
-    margin: 20px auto;
-}
-.dashboard-container {
-    background-color: rgba(255, 255, 255, 0.9);
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 350%; /* Adjust the width as desired */
-    max-width: 500px; 
-    text-align: center;
-    margin: 0 auto;
-}
-.center-box {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 80vh; /* Make the center box full height of the viewport */
-}
-
-.dashboard-container {
-    background-color: rgba(255, 255, 255, 0.9);
-    padding: 50px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 2000%; /* Adjust the width as desired */
-    max-width: 50000px; 
-    max-height: 80vh; /* Limit the height of the dashboard container */
-    overflow-y: auto; /* Add vertical scrollbar if content overflows */
-    text-align: center;
-}
-
-
-
-/* Login Page and Signup Page  */
-
+/* General body styles */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
@@ -185,6 +19,7 @@ body {
     height: 100vh; /* Center vertically */
 }
 
+/* Login and Signup Containers */
 .login-container, .signup-container {
     background-color: rgba(255, 255, 255, 0.9);
     padding: 50px;
@@ -274,16 +109,17 @@ button:hover {
     padding-right: 40px; /* Make space for toggle button */
 }
 
-.toggle-password
- {
+.toggle-password {
     position: absolute;
     right: 8px;
     top: 7px;
     cursor: pointer;
 }
+
 .password-container input[type="password"] {
     width: calc(100% - 40px); 
 }
+
 .menu-toggle {
     cursor: pointer;
     display: flex;
@@ -323,4 +159,16 @@ button:hover {
 
 .show-menu {
     display: block !important;
+}
+
+/* Specific styles for dashboard page */
+.dashboard-container {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 1000px;
+    text-align: center;
+    margin: 0 auto;
 }
