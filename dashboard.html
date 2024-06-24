@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="dashboard-page">
+    <div class="background-image">
+        <div class="center-box">
+            <div class="dashboard-container">
+                <div class="header">
+                    <h2>WELCOME TO DASHBOARD</h2>
+                    <div class="dropdown">
+                        <button class="dropbtn">Menu &#9662;</button>
+                        <div class="dropdown-content">
+                            <a href="index.html">Logout</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="hospital-booking-container">
+                    <h2>Book Appointment</h2>
+                    <form id="appointment-form" action="#" method="post" onsubmit="confirmBooking(event)">
+                        <label for="hospital">Select Hospital:</label>
+                        <select id="hospital" name="hospital" required onchange="updateDepartmentsAndDoctors()">
+                            <option value="" disabled selected>Select Hospital</option>
+                            <option value="KMCH">KMCH</option>
+                            <option value="PSG">PSG</option>
+                            <option value="Ganga">Ganga</option>
+                            <option value="Sri Ramakrishna">Sri Ramakrishna</option>
+                            <option value="Coimbatore Medical College">Coimbatore Medical College</option>
+                            <option value="GEM">GEM</option>
+                        </select>
+
+                        <label for="department">Select Department:</label>
+                        <select id="department" name="department" required>
+                            <option value="" disabled selected>Select Department</option>
+                        </select>
+
+                        <label for="doctor">Select Doctor:</label>
+                        <select id="doctor" name="doctor" required>
+                            <option value="" disabled selected>Select Doctor</option>
+                        </select>
+
+                        <label for="date">Select Date:</label>
+                        <input type="date" id="date" name="date" required>
+
+                        <label for="time">Available Time Slots:</label>
+                        <select id="time" name="time" required>
+                            <option value="09:00">09:00 AM</option>
+                            <option value="11:00">11:00 AM</option>
+                            <option value="14:00">02:00 PM</option>
+                            <option value="16:00">04:00 PM</option>
+                        </select>
+
+                        <label for="patientName">Your Name:</label>
+                        <input type="text" id="patientName" name="patientName" required>
+
+                        <label for="patientAge">Your Age:</label>
+                        <input type="number" id="patientAge" name="patientAge" required>
+
+                        <label for="patientPhone">Your Phone:</label>
+                        <input type="tel" id="patientPhone" name="patientPhone" required>
+
+                        <button type="submit">Book Appointment</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="scripts.js"></script>
+    <script>
+        const hospitalData = {
+            "KMCH": {
+                "Cardiology": ["Dr. N. Prathap Kumar", "Dr. R. Babu"],
+                "Neurology": ["Dr. V. Sundar", "Dr. J. Mohanraj"],
+                "Orthopedics": ["Dr. A. Karthikeyan", "Dr. R. Saravanan"],
+                "Pediatrics": ["Dr. P. Srinivasan", "Dr. V. Sriram"]
+            },
+            "PSG": {
+                "Cardiology": ["Dr. S. Ramakrishnan", "Dr. S. Prasad"],
+                "Oncology": ["Dr. M. Ravichandran", "Dr. S. Shanmugapriya"],
+                "Gastroenterology": ["Dr. A. Gopalakrishnan", "Dr. S. Kumaravel"],
+                "Dermatology": ["Dr. R. Pradeep", "Dr. S. Geetha"]
+            },
+            "Ganga": {
+                "Orthopedics": ["Dr. S. Rajasekaran", "Dr. J. Dheenadayalan"],
+                "Plastic Surgery": ["Dr. A. Sundararajan", "Dr. M. Senthil"],
+                "Neurosurgery": ["Dr. S. Venkataramanan", "Dr. S. Raja Sabapathy"],
+                "Rheumatology": ["Dr. R. Rajendran", "Dr. A. Balasubramanian"]
+            },
+            "Sri Ramakrishna": {
+                "Cardiology": ["Dr. P. Mohanraj", "Dr. V. Kumaravel"],
+                "Nephrology": ["Dr. S. Balasubramanian", "Dr. P. Anand"],
+                "Pulmonology": ["Dr. R. Narasimhan", "Dr. S. Sriram"],
+                "Urology": ["Dr. K. Subramaniam", "Dr. P. Venkatesh"]
+            },
+            "Coimbatore Medical College": {
+                "Cardiology": ["Dr. P. Thangavelu", "Dr. S. Balaji"],
+                "Neurology": ["Dr. A. Srinivasan", "Dr. R. Subramanian"],
+                "General Surgery": ["Dr. M. Rajendran", "Dr. R. Suresh"],
+                "Obstetrics and Gynecology": ["Dr. N. Vijayalakshmi", "Dr. M. Priya"]
+            },
+            "GEM": {
+                "Gastroenterology": ["Dr. C. Palanivelu", "Dr. S. Rajan"],
+                "Oncology": ["Dr. M. Senthil", "Dr. R. Kavitha"],
+                "Bariatric Surgery": ["Dr. P. Senthilnathan", "Dr. K. Praveenraj"],
+                "Anesthesiology": ["Dr. V. Balakrishnan", "Dr. K. Manikandan"]
+            }
+        };
+
+        function updateDepartmentsAndDoctors() {
+            const hospitalSelect = document.getElementById('hospital');
+            const departmentSelect = document.getElementById('department');
+            const doctorSelect = document.getElementById('doctor');
+            const selectedHospital = hospitalSelect.value;
+
+            departmentSelect.innerHTML = '<option value="" disabled selected>Select Department</option>';
+            doctorSelect.innerHTML = '<option value="" disabled selected>Select Doctor</option>';
+
+            if (selectedHospital && hospitalData[selectedHospital]) {
+                const departments = Object.keys(hospitalData[selectedHospital]);
+                departments.forEach(department => {
+                    const option = document.createElement('option');
+                    option.value = department;
+                    option.textContent = department;
+                    departmentSelect.appendChild(option);
+                });
+            }
+        }
+
+        document.getElementById('department').addEventListener('change', function() {
+            const hospitalSelect = document.getElementById('hospital');
+            const departmentSelect = document.getElementById('department');
+            const doctorSelect = document.getElementById('doctor');
+            const selectedHospital = hospitalSelect.value;
+            const selectedDepartment = departmentSelect.value;
+
+            doctorSelect.innerHTML = '<option value="" disabled selected>Select Doctor</option>';
+
+            if (selectedHospital && selectedDepartment && hospitalData[selectedHospital][selectedDepartment]) {
+                const doctors = hospitalData[selectedHospital][selectedDepartment];
+                doctors.forEach(doctor => {
+                    const option = document.createElement('option');
+                    option.value = doctor;
+                    option.textContent = doctor;
+                    doctorSelect.appendChild(option);
+                });
+            }
+        });
+
+        function confirmBooking(event) {
+            event.preventDefault();
+            alert("Your appointment has been booked successfully!");
+        }
+    </script>
+</body>
+</html>

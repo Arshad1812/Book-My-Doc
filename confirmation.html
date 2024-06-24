@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmation</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="dashboard-page">
+    <div class="background-image">
+        <div class="center-box">
+            <div class="dashboard-container">
+                <div class="confirmation-container">
+                    <h2>Booking Confirmation</h2>
+                    <p><strong>Thank you for booking an appointment!</strong></p>
+
+                    <p>Your booking details:</p>
+                    <p>Hospital: <span id="confirmedHospital"></span></p>
+                    <p>Department: <span id="confirmedDepartment"></span></p>
+                    <p>Doctor: <span id="confirmedDoctor"></span></p>
+                    <p>Date: <span id="confirmedDate"></span></p>
+                    <p>Time: <span id="confirmedTime"></span></p>
+                    <p>Patient Name: <span id="confirmedName"></span></p>
+                    <p>Patient Age: <span id="confirmedAge"></span></p>
+                    <p>Phone Number: <span id="confirmedPhone"></span></p>
+                    <p>Booking ID: <span id="generatedBookingId"></span></p>
+
+                    <button onclick="showLocation()">Show Location</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>
