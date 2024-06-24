@@ -1,14 +1,14 @@
 /* General body styles */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 5;
-    padding: 8;
+    margin: 8;
+    padding: 5;
     background: url('hos.jpg') no-repeat center center fixed;
     background-size: cover;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 80vh;
     color: #333;
 }
 
